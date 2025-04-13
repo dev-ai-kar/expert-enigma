@@ -4,7 +4,8 @@
 graph TD
     User[User] -->|Draws or Uploads Digit| Frontend["Frontend (React)"]
     Frontend -->|Processes Drawing as Image| Backend["Backend (Django)"]
-    Backend -->|Processes Image and Classifies Digit| Backend
+    Backend -->|Processes Image and Classifies Digit| TensorFlowModel["TensorFlow Model"]
+    TensorFlowModel -->|Returns Classification Result| Backend
     Backend -->|Sends Classification Result| Frontend
     Frontend -->|Displays Result| User
 ```
